@@ -4,9 +4,7 @@ export const usePagination = () => {
     const [page, setPage] = useState(1);
 
     const handlePrevPage = () => {
-        console.log(page);
         if (page !== 1) {
-            console.log("disini");
             setPage(page - 1);
         }
     };

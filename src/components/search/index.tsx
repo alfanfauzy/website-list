@@ -15,7 +15,8 @@ const Search = () => {
         if (newValue.length > 3) {
             navigate("/search");
         } else if (newValue.length === 0) {
-            navigate(-1);
+            console.log("emang nggak kesini");
+            navigate("/");
         }
     };
 

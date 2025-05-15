@@ -12,8 +12,6 @@ const MoviewSearch = () => {
         enabled: searchQuery.length > 3 && !!page,
     });
 
-    console.log("movieSearch", searchQuery);
-
     if (isLoading) {
         return (
             <div className="flex justify-center">
@@ -25,7 +23,7 @@ const MoviewSearch = () => {
     return (
         <>
             <span className="font-semibold text-gray-700 text-base text-left">
-                Movie Search
+                Movie Search : {searchQuery}
             </span>
             <MovieList
                 movies={data?.movies}

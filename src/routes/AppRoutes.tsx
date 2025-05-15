@@ -4,6 +4,7 @@ import MoviewPopular from "../pages/movie-popular";
 import MovieTopRated from "../pages/movie-toprated";
 import MoviewUpcoming from "../pages/movie-upcoming";
 import MovieDetail from "../pages/movie-detail";
+import MoviewSearch from "../pages/movie-search";
 
 const AppRoutes = () => {
     return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
             <Route path="/toprated" element={<MovieTopRated />} />
             <Route path="/upcoming" element={<MoviewUpcoming />} />
             <Route path="/movie/:id" element={<MovieDetail />} />
+            <Route path="/search" element={<MoviewSearch />} />
         </Routes>
     );
 };

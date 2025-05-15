@@ -7,8 +7,6 @@ export const mapToMovieSearch = (
     movies: Array<GetMovieSearchListData>
 ): Array<MovieSearchData> =>
     movies.map((movie) => {
-        console.log(movie);
-
         let releaseDate: string | Date;
 
         if (movie.release_date && movie.release_date.length > 0) {

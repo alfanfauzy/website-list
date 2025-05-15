@@ -8,7 +8,6 @@ const GetMovieNowPlayingKey = "GetMovieNowPlayingKey" as const;
 export const GetMoviewNewPlayingList = async (
     page?: string
 ): Promise<GetMovieNowPlayingListResponse> => {
-    console.log(page);
     try {
         const response = await Get({
             endpoint: `${
