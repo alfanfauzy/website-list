@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# 🎬 Movie Explorer — TMDB API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React web application that displays a list of movies using the [TMDB API](https://developer.themoviedb.org/docs). Users can browse, search, and view detailed information about movies.
 
-Currently, two official plugins are available:
+![alt text](<Screenshot 2025-05-15 at 21.17.51.png>)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎞️ Movie list with poster, title, and release year
+- 🔍 Search movies
+- 🎯 Show movies by category:
+  - Now Playing
+  - Popular
+  - Top Rated
+  - Upcoming
+- 📄 Movie detail page with:
+  - Overview
+  - Release date
+- 🔄 Pagination
+- ✅ Unit tested with React Testing Library
+- 🎨 Styled using Tailwind CSS
+- ⚙️ Built with Vite and TypeScript
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 📦 Tech Stack
+
+- **React + TypeScript**
+- **Vite**
+- **React Router**
+- **Tailwind CSS**
+- **Axios**
+- **Jest + React Testing Library**
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/movie-website.git
+cd movie-website
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 2. Install Dependencies
+```bash
+npm install
 ```
+
+### 3. Add Your TMDB API Key
+Create a `.env` file in the root directory:
+```
+VITE_TMDB_API_KEY=your_tmdb_api_key_here
+```
+Get your key from: https://developer.themoviedb.org/docs/getting-started
+
+### 4. Run the Development Server
+```
+npm run dev
+```
+Open http://localhost:5173 in your browser.
+
+### 🧪 Running Tests
+```
+npm run test
+```
+Unit tests are written using React Testing Library and Jest.
+
+### 🗂️ Project Structure
+```
+src/
+├── api/              # Axios instance & API functions
+├── components/       # Reusable UI components
+├── pages/            # Route pages (Home, MovieDetail)
+├── hooks/            # Custom Hooks
+├── layour/           # Layout pages (MainLayout, MovieList)
+├── types/            # TypeScript types
+├── routes/           # Routes File
+├── utils/            # Utils
+├── App.tsx           # App routes
+└── main.tsx          # App entry
+```
+
+### 📌 Notes
+- This project uses Vite for fast development and build.
+- Tailwind CSS is used via PostCSS with @tailwindcss/postcss.
+- Error handling and loading states are implemented for better UX.
+- Component structure follows best practices in separation of concerns and reusability.
+
+### 🧑‍💻 Author
+Built with ❤️ by Alfan Fauzy
+
+### 📃 License
+MIT — free to use and modify.
