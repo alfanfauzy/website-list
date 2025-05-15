@@ -5,4 +5,9 @@ type SearchContextType = {
     setSearchQuery: (query: string) => void;
 };
 
-export const SearchContext = createContext<SearchContextType>();
+const defaultContext = {
+    searchQuery: "",
+    setSearchQuery: () => {},
+};
+
+export const SearchContext = createContext<SearchContextType>(defaultContext);
