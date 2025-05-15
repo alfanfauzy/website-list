@@ -1,11 +1,11 @@
-import { useGetMovieNowPlayingUsecase } from "../../api/fetch/movieNowPlaying/usecases/GetMovieNowPlayingUsecase";
-import Loading from "../../components/loading";
-import { usePagination } from "../../hooks/usePagination";
+import { useGetMoviePopularUsecase } from "../../api/fetch/moviePopular/usecases/GetMoviePopularUsecase";
 import MovieList from "../../layout/MovieList";
+import { usePagination } from "../../hooks/usePagination";
+import Loading from "../../components/loading";
 
-const MoviewHome = () => {
+const MoviewPopular = () => {
     const { page, handleNextPage, handlePrevPage } = usePagination();
-    const { data, isLoading } = useGetMovieNowPlayingUsecase(page.toString(), {
+    const { data, isLoading } = useGetMoviePopularUsecase(page.toString(), {
         enabled: !!page,
     });
 
@@ -20,7 +20,7 @@ const MoviewHome = () => {
     return (
         <>
             <span className="font-semibold text-gray-700 text-base text-left">
-                Now Playing
+                Popular
             </span>
             <MovieList
                 movies={data?.movies}
@@ -32,4 +32,4 @@ const MoviewHome = () => {
     );
 };
 
-export default MoviewHome;
+export default MoviewPopular;

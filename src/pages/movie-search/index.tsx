@@ -1,13 +1,18 @@
-import { useGetMovieNowPlayingUsecase } from "../../api/fetch/movieNowPlaying/usecases/GetMovieNowPlayingUsecase";
+import { useContext } from "react";
+import { useGetMovieSearchUsecase } from "../../api/fetch/movieSearch/usecases/GetMovieSearchUsecase";
 import Loading from "../../components/loading";
 import { usePagination } from "../../hooks/usePagination";
 import MovieList from "../../layout/MovieList";
+import { SearchContext } from "../../context/searchContext";
 
-const MoviewHome = () => {
+const MoviewSearch = () => {
     const { page, handleNextPage, handlePrevPage } = usePagination();
-    const { data, isLoading } = useGetMovieNowPlayingUsecase(page.toString(), {
-        enabled: !!page,
+    const { searchQuery } = useContext(SearchContext);
+    const { data, isLoading } = useGetMovieSearchUsecase(searchQuery, page, {
+        enabled: searchQuery.length > 3 && !!page,
     });
+
+    console.log("movieSearch", searchQuery);
 
     if (isLoading) {
         return (
@@ -20,7 +25,7 @@ const MoviewHome = () => {
     return (
         <>
             <span className="font-semibold text-gray-700 text-base text-left">
-                Now Playing
+                Movie Search
             </span>
             <MovieList
                 movies={data?.movies}
@@ -32,4 +37,4 @@ const MoviewHome = () => {
     );
 };
 
-export default MoviewHome;
+export default MoviewSearch;

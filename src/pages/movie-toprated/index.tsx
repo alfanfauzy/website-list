@@ -1,11 +1,11 @@
-import { useGetMovieNowPlayingUsecase } from "../../api/fetch/movieNowPlaying/usecases/GetMovieNowPlayingUsecase";
+import { useGetMovieTopRatedUsecase } from "../../api/fetch/movieTopRated/usecases/GetMovieTopRatedUsecase";
 import Loading from "../../components/loading";
 import { usePagination } from "../../hooks/usePagination";
 import MovieList from "../../layout/MovieList";
 
-const MoviewHome = () => {
+const MovieTopRated = () => {
     const { page, handleNextPage, handlePrevPage } = usePagination();
-    const { data, isLoading } = useGetMovieNowPlayingUsecase(page.toString(), {
+    const { data, isLoading } = useGetMovieTopRatedUsecase(page.toString(), {
         enabled: !!page,
     });
 
@@ -20,7 +20,7 @@ const MoviewHome = () => {
     return (
         <>
             <span className="font-semibold text-gray-700 text-base text-left">
-                Now Playing
+                Top Rated
             </span>
             <MovieList
                 movies={data?.movies}
@@ -32,4 +32,4 @@ const MoviewHome = () => {
     );
 };
 
-export default MoviewHome;
+export default MovieTopRated;
