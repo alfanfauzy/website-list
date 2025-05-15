@@ -2,8 +2,7 @@
 
 This is a React web application that displays a list of movies using the [TMDB API](https://developer.themoviedb.org/docs). Users can browse, search, and view detailed information about movies.
 
-![alt text](<Screenshot 2025-05-15 at 21.17.51.png>)
-
+<img width="1608" alt="Screenshot 2025-05-15 at 21 17 51" src="https://github.com/user-attachments/assets/d56aad02-5130-4e27-ac78-eff292d1eb00" />
 
 ## ✨ Features
 
