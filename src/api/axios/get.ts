@@ -19,7 +19,7 @@ type Get = {
  * });
  */
 const Get = async ({ baseURL, endpoint, params, headers = {} }: Get) => {
-  const { status, ...response } =
+  const { status, data } =
     (await axiosApiInstance.get(endpoint, {
       headers: headers || {},
       params,
@@ -28,8 +28,8 @@ const Get = async ({ baseURL, endpoint, params, headers = {} }: Get) => {
 
   return {
     code: status,
-    message: response.data?.message || "",
-    ...response.data,
+    message: data?.message || "",
+    ...data,
   };
 };
 

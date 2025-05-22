@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx", // ✅ Enable JSX support
-    "types": ["jest", "node"], // ✅ Enable Jest globals
+    "types": ["jest", "node", "react"], // ✅ Enable Jest globals
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "moduleResolution": "bundler"
   },
   "include": ["src", "jest.setup.js", "src/setupTests.ts"] // ✅ Ensure test files included
 }
